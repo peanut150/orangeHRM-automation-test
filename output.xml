@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.5 on win32)" generated="2025-06-27T12:39:52.536730" rpa="false" schemaversion="5">
+<suite id="s1" name="HrmWebApp" source="C:\Users\User\PycharmProjects\HrmWebApp">
+<suite id="s1-s1" name="Tests" source="C:\Users\User\PycharmProjects\HrmWebApp\Tests">
+<suite id="s1-s1-s1" name="MyInfo" source="C:\Users\User\PycharmProjects\HrmWebApp\Tests\MyInfo">
+<suite id="s1-s1-s1-s1" name="ViewPersonalDetailsTest" source="C:\Users\User\PycharmProjects\HrmWebApp\Tests\MyInfo\ViewPersonalDetailsTest.robot">
+<test id="s1-s1-s1-s1-t1" name="User Successfully View Personal Details" line="11">
+<kw name="User access the site" owner="LoginKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:39:53.231650" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-27T12:39:53.231429" elapsed="4.944764"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-27T12:39:58.176595" elapsed="0.039897"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-06-27T12:39:58.216751" elapsed="0.003222"/>
+</kw>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2025-06-27T12:39:53.230502" elapsed="4.989939"/>
+</kw>
+<kw name="Given User Successfully Logs In" owner="LoginKeywords">
+<kw name="User enters correct username" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:39:58.222574" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<arg>${txt_loginUsername}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:39:58.222201" elapsed="1.059434"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:39:59.782306" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:39:59.281929" elapsed="0.500541"/>
+</kw>
+<arg>${Username}</arg>
+<status status="PASS" start="2025-06-27T12:39:58.221920" elapsed="1.560706"/>
+</kw>
+<kw name="User enters correct password" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:39:59.783848" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<arg>${txt_loginPassword}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:39:59.783505" elapsed="0.141647"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:00.428519" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:39:59.925431" elapsed="0.503297"/>
+</kw>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-06-27T12:39:59.782904" elapsed="0.645993"/>
+</kw>
+<kw name="User clicks login button" owner="LoginKeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:00.429960" level="INFO">Clicking button 'xpath://*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:00.429643" elapsed="1.473783"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:00.429201" elapsed="1.474348"/>
+</kw>
+<kw name="User should redirect to dashboard" owner="LoginKeywords">
+<kw name="User Navigates to Dashboard Page" owner="Navigation">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:01.904579" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[8]/a'.</msg>
+<arg>${link_dashboardPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:01.904395" elapsed="1.199244"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${SiteUrl}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:03.103826" elapsed="0.008968"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_navTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:03.112970" elapsed="0.886365"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:04.007170" level="INFO">Current location is 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index'.</msg>
+<arg>${SiteUrl}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-06-27T12:40:03.999792" elapsed="0.007633"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:04.008370" level="INFO">Verifying element 'xpath://span[@class="oxd-topbar-header-breadcrumb"]' contains exact text 'Dashboard'.</msg>
+<arg>${txt_navTitle}</arg>
+<arg>${NavbarTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:04.007747" elapsed="0.030988"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:06.039644" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:04.039009" elapsed="2.000913"/>
+</kw>
+<arg>${DashboardUrl}</arg>
+<arg>${DashNavbar}</arg>
+<status status="PASS" start="2025-06-27T12:40:01.904132" elapsed="4.136018"/>
+</kw>
+<arg>${PageUrl}</arg>
+<arg>${NavbarTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:01.903748" elapsed="4.136569"/>
+</kw>
+<arg>${UserName}</arg>
+<arg>${Password}</arg>
+<arg>${DashboardUrl}</arg>
+<arg>${DashNavbarTitle}</arg>
+<status status="PASS" start="2025-06-27T12:39:58.221352" elapsed="7.819111"/>
+</kw>
+<kw name="When User Navigates To My Info Page" owner="Navigation">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:06.042534" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a'.</msg>
+<arg>${link_myinfoPage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:06.042119" elapsed="1.198297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_navTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:07.241005" elapsed="0.418739"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:07.660756" level="INFO">Verifying element 'xpath://span[@class="oxd-topbar-header-breadcrumb"]' contains exact text 'PIM'.</msg>
+<arg>${txt_navTitle}</arg>
+<arg>${NavbarTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:07.660161" elapsed="0.056287"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:09.717669" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:07.716812" elapsed="2.001122"/>
+</kw>
+<arg>${MyInfoNavbar}</arg>
+<status status="PASS" start="2025-06-27T12:40:06.041325" elapsed="3.676826"/>
+</kw>
+<kw name="Then User Can View Personal Details" owner="ViewPersonalDetailsKeywords">
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:09.722228" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:09.720830" elapsed="0.013419"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:11.735793" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:09.734849" elapsed="2.001199"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:11.737352" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:11.736431" elapsed="0.010612"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:13.748499" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:11.747517" elapsed="2.001249"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:09.720376" elapsed="4.028673"/>
+</kw>
+<kw name="Clicks the Contact Details" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:13.751082" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/a'.</msg>
+<arg>${link_contactDetails}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:13.750631" elapsed="0.660329"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_contactDetailsFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:14.411299" elapsed="0.443941"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:14.855882" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/h6' contains exact text 'Contact Details'.</msg>
+<arg>${txt_contactDetailsFormTitle}</arg>
+<arg>${ContactFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:14.855509" elapsed="0.027170"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:16.884110" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:14.883025" elapsed="2.001319"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:16.887445" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:16.885391" elapsed="0.010436"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:18.897281" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:16.896185" elapsed="2.001341"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:18.898547" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:18.897853" elapsed="0.009514"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:20.908236" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:18.907738" elapsed="2.000738"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:16.884780" elapsed="4.023897"/>
+</kw>
+<arg>${ContactFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:13.749747" elapsed="7.159036"/>
+</kw>
+<kw name="Clicks the Emergency Contacts" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:20.910579" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[3]/a'.</msg>
+<arg>${link_emergencyContacts}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:20.910169" elapsed="0.687794"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_emergencyContactsFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:21.598305" elapsed="0.395582"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:21.994776" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/h6' contains exact text 'Assigned Emergency Contacts'.</msg>
+<arg>${txt_emergencyContactsFormTitle}</arg>
+<arg>${EmergencyFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:21.994271" elapsed="0.027444"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:24.026862" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:22.021914" elapsed="2.005212"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:24.031936" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:24.031141" elapsed="0.032265"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:26.064558" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:24.063656" elapsed="2.001175"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:26.066055" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:26.065259" elapsed="0.009686"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:28.076499" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:26.075335" elapsed="2.001452"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:24.027557" elapsed="4.049433"/>
+</kw>
+<arg>${EmergencyFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:20.909174" elapsed="7.167934"/>
+</kw>
+<kw name="Clicks the Dependents" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:28.078791" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[4]/a'.</msg>
+<arg>${link_dependents}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:28.078373" elapsed="0.550689"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_dependentsFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:28.629533" elapsed="0.516050"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:29.146429" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/h6' contains exact text 'Assigned Dependents'.</msg>
+<arg>${txt_dependentsFormTitle}</arg>
+<arg>${DependentsFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:29.145927" elapsed="0.037489"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:31.184563" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:29.183731" elapsed="2.001141"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:31.187264" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:31.186134" elapsed="0.012093"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:33.199496" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:31.198599" elapsed="2.001409"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:33.201274" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:33.200398" elapsed="0.009433"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:35.211036" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:33.210156" elapsed="2.001112"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:31.185479" elapsed="4.025992"/>
+</kw>
+<arg>${DependentsFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:28.077469" elapsed="7.134108"/>
+</kw>
+<kw name="Clicks the Immigration" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:35.213007" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[5]/a'.</msg>
+<arg>${link_immigration}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:35.212563" elapsed="0.885225"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_immigrationFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:36.098033" elapsed="0.413673"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:36.512523" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/h6' contains exact text 'Assigned Immigration Records'.</msg>
+<arg>${txt_immigrationFormTitle}</arg>
+<arg>${ImmigrationFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:36.511989" elapsed="0.035821"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:38.548780" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:36.548134" elapsed="2.000876"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:38.550709" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:38.549958" elapsed="0.009416"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:40.560299" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:38.559695" elapsed="2.000816"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:40.561553" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:40.560829" elapsed="0.008336"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:42.570334" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:40.569482" elapsed="2.001096"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:38.549419" elapsed="4.021387"/>
+</kw>
+<arg>${ImmigrationFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:35.211942" elapsed="7.358995"/>
+</kw>
+<kw name="Clicks the Job" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:42.572362" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[6]/a'.</msg>
+<arg>${link_myInfoJob}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:42.571935" elapsed="0.535479"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_jobFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:43.107908" elapsed="0.435072"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:43.543851" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/h6' contains exact text 'Job Details'.</msg>
+<arg>${txt_jobFormTitle}</arg>
+<arg>${JobFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:43.543316" elapsed="0.022566"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:45.567111" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:43.566154" elapsed="2.001196"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:45.569021" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:45.568310" elapsed="0.014045"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:47.583700" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:45.582690" elapsed="2.001276"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:47.585323" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:47.584481" elapsed="0.009354"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:49.595306" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:47.594239" elapsed="2.001338"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:45.567775" elapsed="4.027997"/>
+</kw>
+<arg>${JobFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:42.571316" elapsed="7.024563"/>
+</kw>
+<kw name="Clicks the Salary" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:49.597427" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[7]/a'.</msg>
+<arg>${link_salary}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:49.597031" elapsed="0.618415"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_salaryFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:50.215786" elapsed="0.459155"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:50.675777" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/h6' contains exact text 'Assigned Salary Components'.</msg>
+<arg>${txt_salaryFormTitle}</arg>
+<arg>${SalaryFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:50.675287" elapsed="0.022416"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:52.698181" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:50.697885" elapsed="2.000584"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:52.700347" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:52.699545" elapsed="0.009259"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:54.709731" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:52.709126" elapsed="2.000815"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:54.710997" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:54.710267" elapsed="0.009019"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:56.721219" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:54.719516" elapsed="2.001946"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:52.698961" elapsed="4.022728"/>
+</kw>
+<arg>${SalaryFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:49.596234" elapsed="7.125581"/>
+</kw>
+<kw name="Clicks the Report-To" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:56.723376" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[8]/a'.</msg>
+<arg>${link_reportTo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:40:56.723013" elapsed="0.586430"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_reportToFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:40:57.309785" elapsed="0.379599"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:57.690187" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/h6' contains exact text 'Report to'.</msg>
+<arg>${txt_reportToFormTitle}</arg>
+<arg>${ReportToFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:40:57.689680" elapsed="0.020082"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:40:59.711491" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:57.709983" elapsed="2.001846"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:40:59.713980" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:40:59.713178" elapsed="0.012406"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:01.727763" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:40:59.725954" elapsed="2.002056"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:01.729180" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:41:01.728415" elapsed="0.012085"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:03.741922" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:01.740870" elapsed="2.001306"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:40:59.712403" elapsed="4.029964"/>
+</kw>
+<arg>${ReportToFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:56.722325" elapsed="7.020140"/>
+</kw>
+<kw name="Clicks the Qualifications" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:03.743731" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[9]/a'.</msg>
+<arg>${link_myInfoQualifications}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:41:03.743365" elapsed="0.542818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_qualificationsFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:41:04.286525" elapsed="0.379445"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:04.666874" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/h6' contains exact text 'Qualifications'.</msg>
+<arg>${txt_qualificationsFormTitle}</arg>
+<arg>${QualificationsFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:41:04.666236" elapsed="0.031628"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:06.698898" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:04.698209" elapsed="2.000925"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:06.701292" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:41:06.700288" elapsed="0.013088"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:08.714499" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:06.713705" elapsed="2.001068"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:08.716161" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:41:08.715188" elapsed="0.014071"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:10.730298" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:08.729583" elapsed="2.000944"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:41:06.699616" elapsed="4.031100"/>
+</kw>
+<arg>${QualificationsFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:41:03.742798" elapsed="6.988019"/>
+</kw>
+<kw name="Clicks the Memberships" owner="ViewPersonalDetailsKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:10.732318" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[10]/a'.</msg>
+<arg>${link_myInfoMemberships}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-27T12:41:10.731852" elapsed="0.598893"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_membershipsFormTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-27T12:41:11.331087" elapsed="0.434596"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:11.766524" level="INFO">Verifying element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/h6' contains exact text 'Assigned Memberships'.</msg>
+<arg>${txt_membershipsFormTitle}</arg>
+<arg>${MembershipsFormTitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-06-27T12:41:11.766026" elapsed="0.027212"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:13.794255" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:11.793574" elapsed="2.000947"/>
+</kw>
+<kw name="Scrolls the Whole Page" owner="ViewPersonalDetailsKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:13.796565" level="INFO">Executing JavaScript:
+window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth'})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:41:13.795709" elapsed="0.012519"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:15.809411" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:13.808571" elapsed="2.001103"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-27T12:41:15.810816" level="INFO">Executing JavaScript:
+window.scrollTo({ top: 0, behavior: 'smooth' })
+Without any arguments.</msg>
+<arg>window.scrollTo({ top: 0, behavior: 'smooth' })</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-27T12:41:15.810046" elapsed="0.010028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-27T12:41:17.821504" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-27T12:41:15.820422" elapsed="2.001348"/>
+</kw>
+<status status="PASS" start="2025-06-27T12:41:13.795022" elapsed="4.026992"/>
+</kw>
+<arg>${MembershipsFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:41:10.731175" elapsed="7.090961"/>
+</kw>
+<arg>${ContactFormTitle}</arg>
+<arg>${EmergencyFormTitle}</arg>
+<arg>${DependentsFormTitle}</arg>
+<arg>${ImmigrationFormTitle}</arg>
+<arg>${JobFormTitle}</arg>
+<arg>${SalaryFormTitle}</arg>
+<arg>${ReportToFormTitle}</arg>
+<arg>${QualificationsFormTitle}</arg>
+<arg>${MembershipsFormTitle}</arg>
+<status status="PASS" start="2025-06-27T12:40:09.718982" elapsed="68.103267"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-27T12:41:17.823173" elapsed="2.335087"/>
+</kw>
+<tag>good-case</tag>
+<tag>view-myinfo</tag>
+<status status="PASS" start="2025-06-27T12:39:53.229720" elapsed="86.929235"/>
+</test>
+<status status="PASS" start="2025-06-27T12:39:52.568971" elapsed="87.593098"/>
+</suite>
+<status status="PASS" start="2025-06-27T12:39:52.568139" elapsed="87.596736"/>
+</suite>
+<status status="PASS" start="2025-06-27T12:39:52.567150" elapsed="87.599842"/>
+</suite>
+<status status="PASS" start="2025-06-27T12:39:52.538423" elapsed="87.630529"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">good-case</stat>
+<stat pass="1" fail="0" skip="0">view-myinfo</stat>
+</tag>
+<suite>
+<stat name="HrmWebApp" id="s1" pass="1" fail="0" skip="0">HrmWebApp</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">HrmWebApp.Tests</stat>
+<stat name="MyInfo" id="s1-s1-s1" pass="1" fail="0" skip="0">HrmWebApp.Tests.MyInfo</stat>
+<stat name="ViewPersonalDetailsTest" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">HrmWebApp.Tests.MyInfo.ViewPersonalDetailsTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
